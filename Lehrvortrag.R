@@ -9,7 +9,7 @@ library(dplyr)
 library(scales)
 
 ## Daten importieren
-data <- read.csv("./Bike_Sharing.csv") # Pfad anpassen
+data <- read.csv("https://github.com/timoadam/Lehrvortrag/blob/main/Bike_Sharing.csv")
 data$Station <- as.factor(data$Station) # Station faktorisieren
 head(data)
 dim(data)
