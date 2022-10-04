@@ -25,7 +25,7 @@ col[which(data$Station == stations[5])] <- pal[5]
 
 ## Poisson-Modell (Folie 5)
 
-# Modell schätzen
+## Modell schätzen
 mod_1 <- glm(Anzahl ~ Temperatur, family = "poisson", data = data)
 
 ## Geschätztes Modell
