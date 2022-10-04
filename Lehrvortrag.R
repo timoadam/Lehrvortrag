@@ -61,7 +61,7 @@ ggplot(data = data) +
 residuals_mod_1 <- cbind(data, residuals = data$Anzahl - fitted(mod_1))
 
 ## Residuenverteilung
-ggplot(residuals_mod_1) +
+ggplot(data = residuals_mod_1) +
   geom_histogram(aes(x = residuals, y = ..density.., fill = Station), bins = 40, position = "identity") +
   geom_density(aes(x = residuals, y = after_stat(density), group = Station, color = Station), size = 1) +
   scale_fill_manual(values = alpha(pal[c(3, 5, 1, 4, 2)], 0.25)) +
@@ -128,7 +128,7 @@ ggplot(data = data) +
 residuals_mod_2 <- cbind(data, residuals = data$Anzahl - fitted(mod_2))
 
 ## Residuenverteilung
-ggplot(residuals_mod_2) +
+ggplot(data = residuals_mod_2) +
   geom_histogram(aes(x = residuals, y = ..density.., fill = Station), bins = 40, position = "identity") +
   geom_density(aes(x = residuals, y = after_stat(density), group = Station, color = Station), size = 1) +
   scale_fill_manual(values = alpha(pal[c(3, 5, 1, 4, 2)], 0.25)) +
@@ -172,7 +172,7 @@ ggplot(data = data) +
         legend.position = "none")
 
 ## Modell mit Residuen (Folie 12)
-plot_4b <- ggplot(data = data) +
+ggplot(data = data) +
   geom_point(aes(x = Temperatur, y = Anzahl), col = col, alpha = 0.25, size = 1.5) + 
   geom_line(aes(x = Temperatur, y = predict_mod31), col = pal[1], size = 1) +
   geom_line(aes(x = Temperatur, y = predict_mod32), col = pal[2], size = 1) +
@@ -195,7 +195,7 @@ plot_4b <- ggplot(data = data) +
 residuals_mod_3 <- cbind(data, residuals = data$Anzahl - fitted(mod_3))
 
 ## Residuenverteilung
-ggplot(residuals_mod_3) +
+ggplot(data = residuals_mod_3) +
   geom_histogram(aes(x = residuals, y = ..density.., fill = Station), bins = 40, position = "identity") +
   geom_density(aes(x = residuals, y = after_stat(density), group = Station, color = Station), size = 1) +
   scale_fill_manual(values = alpha(pal[c(3, 5, 1, 4, 2)], 0.25)) +
